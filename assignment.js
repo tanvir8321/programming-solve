@@ -1,3 +1,6 @@
+// https://github.com/tansovir/programming-solve
+
+// kilometer to meter
 function kilometerToMeter(kilo) {
     if (kilo < 0) {
         return "Please enter positive nummber";
@@ -9,6 +12,8 @@ function kilometerToMeter(kilo) {
 var getKilometerToMeter = kilometerToMeter(443);
 console.log(getKilometerToMeter);
 
+
+// budget calculator
 function budgetCalculator(watch, phone, laptop) {
     var totalPrice = (watch * 50) + (phone * 100) + (laptop * 500);
     return totalPrice;
@@ -16,6 +21,8 @@ function budgetCalculator(watch, phone, laptop) {
 var getBudget = budgetCalculator(2, 5, 7);
 console.log(getBudget);
 
+
+// hotel cost calculation 
 function hotelCost(day) {
     if (day <= 0) {
         return "Negative or zero day not possible.";
@@ -34,18 +41,24 @@ function hotelCost(day) {
 var getHotelCost = hotelCost(100);
 console.log(getHotelCost);
 
-function megaFriend(arr) {
-    for (var i = 1; i < arr.length; i++) {
-        for(var j=0; j<i; j++){
-            if(arr[i].length<arr[j].length){
-                var temp = arr[i];
-                arr[i]=arr[j];
-                arr[j]=temp;
-            }
-        }
 
+// find mega friend
+function megaFriend(arr) {
+    if (arr.length == 0) {
+        return "Array not be empty!";
+    } else {
+        for (var i = 1; i < arr.length; i++) {
+            for (var j = 0; j < i; j++) {
+                if (arr[i].length < arr[j].length) {
+                    var temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+
+        }
+        return arr[arr.length - 1];
     }
-    return arr[arr.length-1];
 
 
 }
